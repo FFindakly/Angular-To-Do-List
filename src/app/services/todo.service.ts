@@ -3,6 +3,13 @@ import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { Todo } from '../models/Todo';
 
+// The http request headers
+const httpOptions = {
+  headers: new HttpHeaders({
+    'Content-Type': 'application/json'
+  })
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -14,8 +21,16 @@ todosLimit = "?_limit=10";
 
   constructor(private http: HttpClient) { }
 
+  // Get todos
   getTodos(): Observable<Todo[]> {
     return this.http.get<Todo[]>(`${this.todsUrl}${this.todosLimit}`);
-
-    }
   }
+
+  // Toggle Completed = Update todos
+  toggleCompleted(todo: Todo): Observable<any> {
+    // The url that is needed to make the put request
+    const url = `${this.todsUrl}/${todo.id}`;
+    return this.http.put(url, todo, httpOptions);
+  }
+
+}
