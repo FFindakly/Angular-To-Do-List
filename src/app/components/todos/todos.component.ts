@@ -18,4 +18,8 @@ export class TodosComponent implements OnInit {
     this.todoService.getTodos().subscribe(todos => this.todos = todos);
   }
 
+  deleteTodo(todo: Todo) {
+    console.log("Delete me");
+  }
+
 }
