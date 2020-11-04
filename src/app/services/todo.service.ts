@@ -26,6 +26,11 @@ todosLimit = "?_limit=10";
     return this.http.get<Todo[]>(`${this.todsUrl}${this.todosLimit}`);
   }
 
+  // Add Todo
+  addTodo(todo: Todo):Observable<Todo> {
+    return this.http.post<Todo>(this.todsUrl, todo, httpOptions);
+  }
+
   // Toggle Completed = Update todos
   toggleCompleted(todo: Todo):Observable<any> {
     // The url that is needed to make the put request

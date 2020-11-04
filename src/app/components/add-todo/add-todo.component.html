@@ -1,4 +1,4 @@
-<form class="form">
-    <input type="text" name="title" [(ngModule)]="title" placeholder="Add Todo...">
+<form class="form" (ngSubmit)="onSubmit()">
+    <input type="text" name="title" [(ngModel)]="title" placeholder="Add Todo...">
     <input type="submit" value="Submit" class="btn">
 </form>
