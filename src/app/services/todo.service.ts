@@ -27,14 +27,14 @@ todosLimit = "?_limit=10";
   }
 
   // Toggle Completed = Update todos
-  toggleCompleted(todo: Todo): Observable<any> {
+  toggleCompleted(todo: Todo):Observable<any> {
     // The url that is needed to make the put request
     const url = `${this.todsUrl}/${todo.id}`;
     return this.http.put(url, todo, httpOptions);
   }
 
   // Delete Todo
-  deleteTodo(todo: Todo): Observable<Todo> {
+  deleteTodo(todo: Todo):Observable<Todo> {
     // The url that is needed to make the put request
     const url = `${this.todsUrl}/${todo.id}`;
     return this.http.delete<Todo>(url, httpOptions);
