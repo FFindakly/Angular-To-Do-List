@@ -4,7 +4,7 @@
 - **Basic structure of Angular**
 - **How to create components**
 - **CLI shortcuts**
-    - As a short cut to create a component through the CLI, use the command: ng g c ComponentName
+    - As a shortcut to create a component through the CLI, use the command: ng g c ComponentName
     - To create a component through the CLI and locate it directly inside a specific folder, use the command: ng generate component FolderName/ComponentName
 - **Implementing the Input decorator**
 - **Implemented the [setClass] attribute for Dynamic Styling Classes binding**
